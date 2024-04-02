@@ -1,0 +1,21 @@
+package main;
+
+import java.util.Scanner;
+
+public class Ifelse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Input angka: ");
+		int number = scan.nextInt();
+
+        if (number % 2 == 0) {
+            System.out.println(number + " adalah bilangan genap.");
+        } else {
+            System.out.println(number + " adalah bilangan ganjil.");
+        }
+	}
+
+}
