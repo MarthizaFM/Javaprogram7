@@ -1,0 +1,23 @@
+package aritmeticsesi3;
+
+import java.util.Scanner;
+
+public class Aritmetic8maret {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Input detik : ");
+		
+		int detik = scanner.nextInt();
+        int jam = detik / 3600;
+        detik %= 3600;
+        int menit = detik / 60;
+        detik %= 60;
+        
+        System.out.println("Hasil konversi: " + jam + " jam " + menit + " menit " + detik + " detik");
+        
+	}
+
+}
