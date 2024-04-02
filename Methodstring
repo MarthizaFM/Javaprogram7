@@ -1,0 +1,71 @@
+package methodstring;
+
+public class Methodstring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//containts
+		String str = "Marthiza Fikriya";
+		System.out.println(str.contains("Fikriya")); //returns true
+		System.out.println(str.contains("marthiza")); // returns false
+		
+		//concat()
+		String str1 = "Marthiza";
+		String str2 = "Fikriya";
+		String str3 = str1.concat(" ").concat(str2);
+		System.out.println(str3); //return "Marthiza Fikriya"
+		
+		//compareTo()
+		String str1 = "Apple";
+		String str2 = "Banana";
+		System.out.println(str1.compareTo(str2)); //return -1 (less than zero)
+		System.out.println(str1.compareTo(str1)); //return 1 (greater than zero)
+		System.out.println(str1.compareTo(str1)); //return 0 (equal) 
+		
+		//Format()
+		String str = String.format("Nama saya %s and dan saya berumur %d", "Vya", 19);
+		System.out.println(str); //returns "nama saya Vya dan saya berumur 19."
+		
+		//charAt()
+		String str = "Nihao";
+		System.out.println(str.charAt(0)); //returns 'N'
+		System.out.println(str.charAt(4)); //returns 'o'
+		
+		//replace()
+		String str = "Hello Marthiza";
+		System.out.println(str.replace("Marthiza", "Vya")); //returns "Hello Vya"
+		
+		//substring()
+		String str = "Hello Vya";
+		System.out.println(str.substring(0,5)); //returns "Hello"
+		System.out.println(str.substring(6)); //returns "Vya"
+		
+		//Trim()
+		String str = " Halo Vya";
+		System.out.println(str.trim()); //return " Halo Vya"
+		
+		//toCharArray
+		String str = "Sayonara";
+		char[] charArray = str.toCharArray();
+		System.out.println(charArray[0]); //return 'S'
+		System.out.println(charArray[4]); //return 'n'
+		
+		//split()
+		String str = "Dragon,Rose,Blood";
+		String[] array = str.split(",");
+		System.out.println(array[0]); //return "Dragon"
+		System.out.println(array[1]); //return "Rose"
+		System.out.println(array[2]); //return "Blood"
+		
+		//toLowerCase
+		String str = "Vya Lane";
+		System.out.println(str.toLowerCase()); //returns "vya lane"
+		
+		//toUpperCase
+		String str = "Vya Lane";
+		System.out.println(str.toUpperCase()); //returns "VYA LANE"
+
+	}
+
+}
