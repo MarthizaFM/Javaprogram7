@@ -1,0 +1,87 @@
+package Eval;
+
+import java.util.Scanner;
+
+public class Eval {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scan = new Scanner(System.in);
+		String con;
+
+        do {
+            System.out.print("Do you have a house? (Y/N): ");
+            String havehouse = scan.nextLine();
+
+            if (havehouse.equalsIgnoreCase("N")) {
+                System.out.println("Thanks have a great day!");
+                break;
+            }
+
+            System.out.print("Do you have a yard? (Y/N): ");
+            String haveyard = scan.nextLine();
+
+            if (haveyard.equalsIgnoreCase("N")) {
+                System.out.println("Choice one activity:");
+                System.out.println("1. Cooking");
+                System.out.println("2. Cleaning");
+                String kegiatan = scan.nextLine();
+
+                switch (kegiatan) {
+                    case "1":
+                        System.out.println("Cooking and progress...");
+                        break;
+                    case "2":
+                        System.out.println("Cleaning and progress...");
+                        break;
+                    default:
+                        System.out.println("Invalid.");
+                }
+            } else {
+                System.out.println("Choice one activity:");
+                System.out.println("1. Cooking");
+                System.out.println("2. Cleaning");
+                System.out.println("3. Gardening");
+                String kegiatan = scan.nextLine();
+
+                switch (kegiatan) {
+                    case "1":
+                        System.out.println("Menu:");
+                        System.out.println("1. Pasta");
+                        System.out.println("2. Steak");
+                        System.out.println("3. Fried rice");
+                        String menu = scan.nextLine();
+                        switch (menu) {
+                            case "1":
+                                System.out.println("Cooking pasta...");
+                                break;
+                            case "2":
+                                System.out.println("Cooking steak...");
+                                break;
+                            case "3":
+                                System.out.println("Cooking Fried rice...");
+                                break;
+                            default:
+                                System.out.println("Invalid.");
+                        }
+                        break;
+                    case "2":
+                        System.out.println("Cleaning on progress...");
+                        break;
+                    case "3":
+                        System.out.println("Gardening on progress...");
+                        break;
+                    default:
+                        System.out.println("Invalid.");
+                }
+            }
+
+            System.out.print("Do you want to continue? (Y/N): ");
+            con = scan.nextLine();
+            
+        } while (con.equalsIgnoreCase("Y"));
+        	System.out.println("Thanks have a great day!");
+	}
+
+}
