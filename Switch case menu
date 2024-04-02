@@ -1,0 +1,55 @@
+package menu;
+
+import java.util.Scanner;
+
+public class Menu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scan = new Scanner(System.in);
+		int choice;
+		System.out.println("Menu: ");
+		System.out.println("1. Menghitung luas lingkaran");
+		System.out.println("2. Menghitung luas trapesium");
+		System.out.println("3. Check panjang String");
+		System.out.println("4. Print kalimat");
+		System.out.print("Pilih menu: ");
+		choice = scan.nextInt(); scan.nextLine();
+		switch (choice) {
+		case 1:
+			System.out.print("Input jari-jari lingkaran: ");
+			double radius = scan.nextDouble();
+			double areaLingkaran = Math.PI * Math.pow(radius, 2);
+			System.out.println("Luas lingkaran: "+ areaLingkaran);
+			break;
+		//Math.PI = konstanta nilai π (pi), yang mendekati 3.14.
+		//Math.pow = pangkat
+			
+		case 2:
+			System.out.println("Input lebar trapesium: ");
+			double lebar = scan.nextDouble();
+			System.out.println("Input tinggi trapesium: ");
+			double tinggi = scan.nextDouble();
+			double areaTrapesium = (lebar + tinggi) / 2 * tinggi;
+			System.out.println("Luas trapesium: "+ areaTrapesium);
+			break;
+			
+		case 3: 
+			System.out.print("Masukkan panjang String: ");
+			String inputString = scan.nextLine(); // Baca input string
+               if (inputString.length() > 10) {
+                   System.out.println(inputString.toUpperCase());
+               } else {
+                   System.out.println(inputString.toLowerCase());
+               }
+			break;
+			
+		case 4:
+			System.out.println("Saya jago coding di Java");
+		}
+		
+		
+	}
+
+}
