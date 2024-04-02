@@ -1,0 +1,22 @@
+package looping;
+
+import java.util.Scanner;
+
+public class Looping {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Input angka : ");
+		int input = scan.nextInt();
+		
+		int total = 0;
+		for (int i = 1; i <= input; i++) {
+			if (i % 5 == 0)
+				continue;
+			total += i;
+		}
+		System.out.println("Perjumlahan dari angka 1 sampai dengan 20 tanpa kelipatan 5 adalah " + total);
+	}
+
+}
