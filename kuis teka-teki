@@ -1,0 +1,32 @@
+package kuisbukapuasa;
+
+import java.util.Scanner;
+
+public class Kuisbukapuasa {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Input kata: ");
+        String kata = scan.nextLine();
+
+        int nilai = hitung(kata);
+        if (nilai == 0) {
+            System.out.println(kata + " itu Gratis");
+        } else {
+            System.out.println(kata + " itu " + nilai);
+        }
+    }
+
+    public static int hitung(String kata) {
+        int Total = 0;
+        for (char c : kata.toCharArray()) {
+            if (c == 'a' || c == 'A') {
+                Total++;
+            }
+        }
+        return Total * 1000;
+	}
+
+}
