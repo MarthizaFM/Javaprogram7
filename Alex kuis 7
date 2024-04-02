@@ -1,0 +1,64 @@
+package quiz;
+
+import java.util.Scanner;
+
+public class Alexander_Reinard_Ukim_2702249253 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Do you have a  house [Y/N]: ");
+		String ans = sc.next(); sc.nextLine();
+		boolean R = true;
+			
+		do {
+			if (ans.equalsIgnoreCase("Y")) {
+				System.out.println("Do you have a yard? [Y/N]: ");
+			} else {
+				System.out.println("Thank you have a great day.");
+			}
+			String ans2 = sc.next(); sc.nextLine();
+			if (ans2.equalsIgnoreCase("Y")) {
+				System.out.println("1. Cooking");
+				System.out.println("2. Cleaning");
+				System.out.println("3. Gardening");
+			} else if (ans2.equalsIgnoreCase("N")){
+				System.out.println("1. Cooking");
+				System.out.println("2. Cleaning");
+			} else {
+				System.out.println("Invalid Input");
+			}
+			System.out.println("Input a service: ");
+			int opt = sc.nextInt(); sc.nextLine();
+			switch (opt) {
+			case 1:
+				System.out.println("Pick a meal");
+				System.out.println("1. Pasta");
+				System.out.println("2. Steak");
+				System.out.println("3. Fried Rice");
+				break;
+			case 2:
+				System.out.println("Cleaning in progress");
+				break;
+			case 3:
+				System.out.println("Gardening in progress");
+				break;
+			}
+			int menu = sc.nextInt(); sc.nextLine();
+			switch (menu) {
+			case 1:
+				System.out.println("Cooking Pasta.");
+				break;
+			case 2:
+				System.out.println("Cooking Steak.");
+				break;
+			case 3:
+				System.out.println("Cooking Fried Rice.");
+				break;
+			}
+		
+		} while (R == true);
+				
+	}
+
+}
