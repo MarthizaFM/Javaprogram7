@@ -1,0 +1,28 @@
+package suhu;
+
+import java.util.Scanner;
+
+public class suhu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Input suhu (celcius) : ");
+		
+		double celsius = scanner.nextDouble();  //double selalu ada angka dibelakang koma walaupun hanya 0
+		
+		double Reamur = 4.0/5.0*celsius;
+		double Fahrenheit = 9.0/5.0*celsius+32;
+		double Kelvin = celsius+273.15;
+		
+		System.out.println("Reamur : "+Reamur);
+		System.out.println("Fahrenheit : "+Fahrenheit);
+		System.out.println("Kelvin : "+Kelvin);
+		
+
+        scanner.close();
+		
+	}
+
+}
