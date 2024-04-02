@@ -1,0 +1,25 @@
+package nilain;
+
+import java.util.Scanner;
+
+public class Nilain {
+
+	private static Scanner input;
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Input nilai n: ");
+
+		int n = scanner.nextInt();
+		long sum = (long) n * (n+1)/2;
+		System.out.println("jumlah bilangan asli " + n + " adalah " + sum);
+		scanner.close();
+//		 n scanner
+//		 rumus n "n*(n+1)/2"
+// long untuk angka bulat rentang nilai lebih besar dari int
+		
+	
+		
+	}
+
+}
