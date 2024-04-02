@@ -1,0 +1,16 @@
+package boolea;
+
+public class Boolean {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		boolean statement1 = (16 >= 7) && (23 > 24);
+		System.out.println(statement1);
+		boolean statement2 = (12 == 11) || (12 <= 12);
+		System.out.println(statement2);
+		boolean statement3 = (100 > 24) && (1 == (9 % 2));
+		System.out.println(statement3);
+	}
+
+}
