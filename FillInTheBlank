@@ -1,0 +1,163 @@
+package fillintheblank;
+
+import java.util.Scanner;
+
+public class Fillintheblank {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scan = new Scanner(System.in);
+		int mainMenuSelection = 0; // Untuk memilih pilihan pada menu utama, Inisialisasi dengan nilai default 0
+		int foodSelection; // Untuk memilih makanan
+		int quantity; // Banyaknya porsi makanan yang dipesan
+		int total = 0; // Diberi nilai default 0 (Menandakan belum ada pemesanan), Harga total pembelian makanan/minuman
+		int money; // Variable uang yang digunakan pada menu Payment
+				
+				//Untuk membuat sebuah menu biasakan menggunakan do-while
+				do {	//Penjelasan kondisi while ada di paling bawah
+					System.out.println("                         _     _    _ _   _               \r\n"
+							+ "                        (_)   | |  | | \\ | |              \r\n"
+							+ "  _ __   ___  _   _ _ __ _ ___| |__| |  \\| | _____      __\r\n"
+							+ " | '_ \\ / _ \\| | | | '__| / __|  __  | . ` |/ _ \\ \\ /\\ / /\r\n"
+							+ " | | | | (_) | |_| | |  | \\__ \\ |  | | |\\  | (_) \\ V  V / \r\n"
+							+ " |_| |_|\\___/ \\__,_|_|  |_|___/_|  |_|_| \\_|\\___/ \\_/\\_/\n");
+					System.out.println(" 1. Order");
+					System.out.println(" 2. Payment");
+					System.out.println(" 3. Reset Order");
+					System.out.println(" 4. Exit");
+					
+					do {
+						System.out.print(" Input Menu : ");
+						mainMenuSelection = scan.nextInt();
+					} while (mainMenuSelection < 1 || mainMenuSelection > 4); // Validasi input untuk menu utama
+						//1. Validasikan Input menunya
+						/*
+							Input Validation (Hint : Do-While)
+							System.out.print(" Input Menu : ");
+							user diminta memilih opsi dari <1 sampai dengan >4,
+							 * jika input diluar itu akan tidak valid dan 
+							 * langsung untuk diminta memasukkan input lagi.
+							 * menggunakan do while untuk memastikan input user akan divalidasi
+							 * setidaknya sekali sebelum program melanjutkan/mengulangi.
+							 * validasi (mainMenuSelection < 1 || mainMenuSelection > 4)
+							 * jika nilai diluar rentang menu tersebu, loop akan dilakukan
+							 * user diminta mmengiput lagi.
+							 * scan.nextInt() digunakan untuk menerima input dalam bentuk bilangan bulat
+							 * mainMenuSelection untuk tempat penyimpanan dan mengelola input yang 
+							 * dimasukkan user pada opsi menu
+						*/
+
+					switch(mainMenuSelection)
+					{
+					case 1:
+						do {
+							System.out.println("  1. Sweet Madame  | Rp 100.000");
+							System.out.println("  2. Mora Meat     | Rp  45.000");
+							System.out.println("  3. Jade Parcels  | Rp  50.000");
+							System.out.println("  4. Back");
+							do {
+								System.out.print("  Select Menu : ");
+								foodSelection = scan.nextInt();
+							} while (foodSelection < 1 || foodSelection > 4); // Validasi input untuk pilihan makanan
+									//2. Validasikan pilihan hanya boleh diantara 1-4 saja
+									/*	
+										Input Validation (Hint : Do-While)
+										System.out.print("  Select Menu : ");
+										*menggunakan do while untuk memastikan input user akan divalidasi
+										 *setidaknya sekali sebelum program melanjutkan/mengulangi.
+										 *variabel foodSeletion digunakan untuk penerimaan input dan 
+										 *disertai scan.nextInt() dengan begitu program akan memberikan proses
+										 *selanjutnya
+										  validasi input yang disediakan berada di rentang <1 sampai dengan >4
+										  jika user memasukkan input diluar rentang ini maka program akan terus meminta
+										  user memasukkan pilihan yang benar
+									*/
+									
+							//Jika user memilih "4. Back"
+							//Kita harus menghentikan Menu makanan secara paksa (break)
+							if(foodSelection == 4) break; // keluar dari loop makanan
+
+							do {
+								System.out.print("  How many? ");
+								quantity = scan.nextInt(); scan.nextLine();
+							} while (quantity < 1);	//Divalidasi, secara logika ketika ingin memesan makanan kita tidak mungkin memesan 0 porsi bahkan -1 atau -100
+							
+							
+							//Menambahkan harga makanan sesuai dengan jumlahnya ke harga total
+							if(foodSelection == 1)		//Sweet Madame
+								total += 100000 * quantity;
+							else if(foodSelection == 2)	//Mora Meat
+								total += 45000 * quantity;
+							else if(foodSelection == 3)	//Jade Parcels
+								total += 50000 * quantity;
+							
+							
+							//Setelah semua proses selesai tampilkan message berikut
+							System.out.println("  Your order has been successfully placed!");
+						} while (foodSelection != 4);
+						break;
+					case 2:
+						if(total == 0) {
+							System.out.println(" Please make an order first!"); // Validasi jika user belum memesan makanan
+							break;
+						}
+								//3. Validasikan, jika user belum memesan makanan
+								//   maka program akan menampilkan pesan
+								//   " Please make an order first!"
+								
+								/*
+									Total Price Validation (Hint : If-else, jump operation)
+									total == 0 agar memastikan kalau tidak ada bekas order sebelumnya.
+									Saat 'total' punya nilai 0, artinya belum ada pesanan yang diproses
+									dan harga totalnya masih 0.
+									kalau tidak ada pesanan sebelumnya program akan print "please make an order first"
+									sehingga user akan diberi tahu untuk memilih item seenggaknya 1.
+									break untuk menghentikan eksekusi lanjut. Artinya total == 0,
+									program keluar dari switch case lalu balik lagi ke bagian loop utama, sehingga user
+									diminta memilih opsi menu kembali
+								*/
+						
+						System.out.println(" The total is " + total);
+						System.out.print(" Enter money : ");
+						money = scan.nextInt(); scan.nextLine();
+						
+						//Validasi jika uang kurang dari total harga
+						while(money < total){
+							//Warning message
+							System.out.println(" Insufficient Money!");
+							System.out.print(" Enter money : ");
+							money = scan.nextInt(); scan.nextLine();
+						}
+						
+						//Output kembalian
+						System.out.println(" Thank you for purchasing!");
+						System.out.println(" Change : Rp " + (money-total));
+						
+								//4. Jelaskan mengapa diakhir payment kita harus
+								//   Mereset nilai total menjadi 0
+								
+								/*
+									Jawaban :
+									perlu mereset nilai total 0 karena ingin menghapus semua pesanan yang telah diproses dan dibayarkan sebelumnya.
+									Dengan begitu nilai total akan kembali menjadi 0, dengan begitu dapat dipastikan setiap user yang ingin order setelah payment akan ditampilkan totalnya dari awal.
+									Kalau tidak direset maka pesanan sebekumnya pun akan ikut terhitung/terakumulasi dengan pesanan baru.
+								*/
+						
+						total = 0;
+						
+						break;
+					case 3:
+						System.out.println(" Order has been reset");
+						total = 0;
+						break;
+					case 4:
+						System.out.println(" Thank you!");
+						break;
+					}
+					
+				} while (mainMenuSelection != 4);
+				//Main menu akan terus berjalan selama user tidak memilih "4. Exit"
+			}
+		
+	}
