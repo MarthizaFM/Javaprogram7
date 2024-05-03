@@ -1,0 +1,97 @@
+package main7;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Sesi7 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//array tipe datanya harus sama
+//Static array
+/* int[] namaArr;
+ * int[] namaArr;
+ * 
+ */
+//deklarasi Array
+//tentukan ukuran array		
+//		int[] scoreList;
+//		scoreList = new int[5];
+//		System.out.println(scoreList.length);
+//		
+//		scoreList[0] = 53;
+//		scoreList[2] = 2;
+//		
+//		System.out.println(0);
+//		System.out.println(1);
+//		System.out.println(2);
+//		System.out.println(3);
+//		System.out.println(4);
+		
+//cara 2
+//		int arrOfNum[] = new int[] {3, 26, 31, 53, 2, 0, 74};
+//		
+//		System.out.println(arrOfNum.length);
+//		for(int i = 0; i < arrOfNum.length; i++) {
+//			System.out.println(arrOfNum[i]+ " ");
+//		}
+		
+//		String[][] listNama = new String[3][3];
+		/* matrix
+		 * [0,0][0,1][0,2]
+		 * [][][]
+		 * [][][]
+		 */
+		//listNama
+//		Scanner scan = new Scanner(System.in);
+//		for (int i = 0; i < listNama.length; i++) {
+//			for (int j = 0; j < listNama.length; j++)
+//				listNama[i][j] = scan.nextLine();
+//		}
+//		for (int i = 0; i < listNama.length; i++) {
+//			for (int j = 0; j < listNama.length; j++)
+//				System.out.println(listNama[i][j]);
+//		}
+		
+//		Scanner scan = new Scanner(System.in);
+//		int[] arr = new int[5];
+//		for (int i = 0; i < arr.length; i++) {
+//			arr[i] = scan.nextInt();
+//		}
+//		for (int i = 0)
+		
+		Scanner scan = new Scanner(System.in);
+		ArrayList<Integer> listAngka = new ArrayList<>(); //wrapper class, string, class
+		//listAngka.add(scan.nextInt());
+		//int angka = scan.nextInt();
+		listAngka.add(10);
+		listAngka.add(11);
+		listAngka.add(12);
+		listAngka.add(13);
+		listAngka.add(14);
+		listAngka.add(3, 0); //add by position
+		
+		listAngka.remove(5);
+		
+		//System.out.println(listAngka.size());
+		System.out.println(listAngka);
+		
+		ArrayList<String> name = new ArrayList<>();
+		name.add("Hans");
+		name.add("William");
+		name.add("Fred");
+		name.add("Ben");
+		
+		name.remove("Hans");
+	//	name.clear();
+	//	System.out.println(name.get(0));
+		System.out.println(name.contains(""));
+		
+		if(name.isEmpty()) {
+			System.out.println("Kosong");
+		}
+		else System.out.println(name);
+		
+	}
+
+}
