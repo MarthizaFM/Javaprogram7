@@ -1,0 +1,32 @@
+package excer7;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class excer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scan = new Scanner(System.in);
+		ArrayList<String> nama = new ArrayList<>();
+		nama.add("Ayam Goreng");
+		nama.add("Soto Ayam");
+		nama.add("Bubur");
+		nama.add("Air Putih");
+		nama.add("Es Jeruk");
+		
+		ArrayList<Integer> harga = new ArrayList<>();
+		harga.add(20000);
+		harga.add(15000);
+		harga.add(10000);
+		harga.add(5000);
+		harga.add(10000);
+		
+		for (int i = 0; i < listNama.length; i++) {
+			for (int j = 0; j < listNama.length; j++)
+				listNama[i][j] = scan.nextLine();
+		
+	}
+
+}
