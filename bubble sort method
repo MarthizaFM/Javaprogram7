@@ -1,10 +1,12 @@
 package sesi;
 
+import java.lang.reflect.Array;
+
 public class sesi {
 	
 	public static void bubbleSort(int[] arr) {
-		for(int i = 0; i < arr.length - 1; i++) {
-			for(int j = 0; j < arr.length - 1 - i; j++) { //dikurangi i untuk sistem penguncian
+		for(int i = 0; i < arr.length - 1; i++) { //-1 hanya berlaku di bubble sort
+			for(int j = 0; j < arr.length - 1 - i; j++) { //dikurangi i u/ sistem penguncian
 				if (arr[j] > arr[j + 1]) {
 					//swap elemen
 					 int temp = arr[j];
@@ -12,6 +14,35 @@ public class sesi {
 		                arr[j + 1] = temp;
 				}
 			}
+		}
+	}
+	
+	
+	public static void selectionSort(int[] arr) {
+		for(int i = 0; i < arr.length-1; i++) {
+			int maxIndex = i;
+			for(int j = i+1; j < arr.length; j++) {
+				if(arr[maxIndex] < arr[j]) {
+					maxIndex = j;
+				}
+			}
+			//swap 
+			int temp = arr[i];
+			arr[i] = arr[maxIndex];
+			arr[maxIndex] = temp;
+		} 
+	}
+	
+	public static void insertionSort(int[] arr) {
+		for(int i = 1; i < arr.length; i++) {
+			int temp = arr[i];
+			int j = i - 1;
+			 
+			while(j >= 0 && arr[j] > temp) {
+				arr[j + 1] = arr[j];
+				j--;
+			}
+			arr[j + 1] = temp;
 		}
 	}
 	
@@ -29,9 +60,12 @@ public class sesi {
 		System.out.println("Sebelum di sorting");
 		printArray(arr);
 		
-		bubbleSort(arr);
+		//bubbleSort(arr);
+		//selectionSort(arr);
+		insertionSort(arr);
 		System.out.println("Sesudah di sorting");
 		printArray(arr);
 	}
 
 }
+
